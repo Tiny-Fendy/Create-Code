@@ -1,0 +1,25 @@
+{
+  "name": "create-code",
+  "version": "1.0.0",
+  "description": "create code",
+  "main": "index.js",
+  "scripts": {
+    "test": "node app/create.js",
+    "create": "node app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tiny-Fendy/Create-Code.git"
+  },
+  "keywords": [
+    "create",
+    "code",
+    "automation"
+  ],
+  "author": "fendy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tiny-Fendy/Create-Code/issues"
+  },
+  "homepage": "https://github.com/Tiny-Fendy/Create-Code#readme"
+}

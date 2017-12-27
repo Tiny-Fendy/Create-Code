@@ -8,10 +8,12 @@
 let fs = require('fs');
 let path = require('path');
 let tmp = require('./tmp.json');
-let file = fs.readFileSync(path.join(__dirname, 'read.fd'), 'utf-8');
+let file = fs.readFileSync(path.join(__dirname, 'read.html'), 'utf-8');
 
 module.exports = function () {
 	let liList = tmp.list.map(str => `<li>${str}</li>\n`);
+
+	let strList = file.split(/[<%^+?%>]/);
 
 	return file.replace('{{}}', liList.join(''));
 }

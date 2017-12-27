@@ -10,10 +10,10 @@ let path = require('path');
 let tmp = require('./tmp.json');
 let file = fs.readFileSync(path.join(__dirname, 'read.html'), 'utf-8');
 
-module.exports = function () {
-	let liList = tmp.list.map(str => `<li>${str}</li>\n`);
+let strList = file.split(/[<%^+?%>]/);
 
-	let strList = file.split(/[<%^+?%>]/);
+// 这里开始做模板编译工作
 
-	return file.replace('{{}}', liList.join(''));
-}
+
+
+module.exports = strList.join('');

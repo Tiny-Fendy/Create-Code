@@ -10,10 +10,6 @@ let path = require('path');
 let tmp = require('./tmp.json');
 let file = fs.readFileSync(path.join(__dirname, 'read.html'), 'utf-8');
 
-let strList = file.split(/[<%^+?%>]/);
+let compile = require('../compile');
 
-// 这里开始做模板编译工作
-
-
-
-module.exports = strList.join('');
+module.exports = compile(file, tmp);

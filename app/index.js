@@ -11,6 +11,6 @@ function fileName (name) {
 
 // 创建文件
 
-fs.writeFile(fileName('test.vue'), list(), err => {
+fs.writeFile(fileName('test.vue'), list, err => {
 	console.log(err);
 });

@@ -32,8 +32,6 @@ module.exports = function (text, json) {
 			let strList = str.split(' ');
 			let attr = strList[0];
 
-			/*console.log('attr = ', attr);
-			console.log('str = ', str);*/
 			switch (attr) {
 				case '=':
 				case 'component':

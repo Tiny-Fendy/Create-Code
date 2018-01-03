@@ -6,6 +6,27 @@
  */
 
 module.exports = function (text, json) {
-	console.log(text);
+	console.log('text =', text instanceof Array);
+	let type = text[0].split(/\s/)[0];
+	let methods = {
+		'='() {
+
+		},
+
+		'for'() {
+
+		},
+
+		'if'() {
+
+		},
+
+		'component'() {
+
+		}
+	}
+
+	methods[type](text);
+
 	return text;
 }

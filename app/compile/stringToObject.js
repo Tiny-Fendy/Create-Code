@@ -4,29 +4,27 @@
  * Created by fengdi on 2017/12/29.
  * @copyright Copyright &copy; 2006-2017 Tuniu.com
  */
+let methods = {
+	'='(str) {
+		return str;
+	},
+
+	'for'(list) {
+		return list.toString();
+	},
+
+	'if'(list) {
+		return list.toString();
+	},
+
+	'component'(str) {
+		return str;
+	}
+}
 
 module.exports = function (text, json) {
-	console.log('text =', text instanceof Array);
 	let type = text[0].split(/\s/)[0];
-	let methods = {
-		'='() {
 
-		},
-
-		'for'() {
-
-		},
-
-		'if'() {
-
-		},
-
-		'component'() {
-
-		}
-	}
-
-	methods[type](text);
-
-	return text;
+	console.log(type, methods[type](text));
+	return methods[type](text);
 }

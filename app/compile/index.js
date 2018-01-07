@@ -44,7 +44,7 @@ module.exports = function (text, json) {
 				case '}':
 					level -= level;
 					if (!level) {
-						stringToObject(stack, json);
+						target.push(stringToObject(stack, json));
 						stack = [];
 					}
 					break;

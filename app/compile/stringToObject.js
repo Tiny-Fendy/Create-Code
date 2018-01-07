@@ -4,10 +4,14 @@
  * Created by fengdi on 2017/12/29.
  * @copyright Copyright &copy; 2006-2017 Tuniu.com
  */
+
+let Value = require('./components/value');
+let Component = require('./components/component');
+let If = require('./components/if');
+let For = require('./components/for');
+
 let methods = {
-	'='(str) {
-		return str;
-	},
+	'=': Value,
 
 	'for'(list) {
 		return list.toString();
@@ -23,8 +27,7 @@ let methods = {
 }
 
 module.exports = function (text, json) {
-	let type = text[0].split(/\s/)[0];
+	let [type, content] = text[0].split(/\s/);
 
-	console.log(type, methods[type](text));
-	return methods[type](text);
+	return methods[type](content, json);
 }

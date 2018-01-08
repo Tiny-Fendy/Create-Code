@@ -6,7 +6,7 @@
  */
 
 let Value = require('./components/value');
-let Component = require('./components/component');
+let Includes = require('./components/includes');
 let If = require('./components/if');
 let For = require('./components/for');
 
@@ -21,9 +21,7 @@ let methods = {
 		return list.toString();
 	},
 
-	'component'(str) {
-		return str;
-	}
+	'includes': Includes
 }
 
 module.exports = function (text, json) {

@@ -3,11 +3,7 @@
 
         <!--搜索区-->
         <el-form :model="form" ref="form" :inline="true" labelWidth="120px">
-            for item in formList {,
-            <el-form-item prop=",=item.key," label="$t('form[,=$index,]')">
-                <el-input v-model="form.,=item.title," class="w220"></el-input>
-            </el-form-item>
-            
+            item
 
             <el-form-item>
                 <el-button type="primary" @click="search">{{$t('search[0]')}}</el-button>
@@ -16,9 +12,7 @@
 
         <!--列表区-->
         <el-table :data="list" border>
-            for row in list {,
-            <el-table-column align="center" prop=",= row.key," label="$t('table[,=$index,]')"></el-table-column>
-            
+            row
         </el-table>
 
         <el-pagination

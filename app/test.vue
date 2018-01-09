@@ -3,16 +3,22 @@
 
         <!--搜索区-->
         <el-form :model="form" ref="form" :inline="true" labelWidth="120px">
-            item
+            
+            <el-form-item prop=",=item.key," label="$t('form[,=$index,]')">
+                <el-input v-model="form.,=item.title," class="w220"></el-input>
+            </el-form-item>
+            
 
             <el-form-item>
-                <el-button type="primary" @click="search">{{$t('search[0]')}}</el-button>
+                <el-button type="primary" @click="">{{$t('search[0]')}}</el-button>
             </el-form-item>
         </el-form>
 
         <!--列表区-->
         <el-table :data="list" border>
-            row
+            
+            <el-table-column align="center" prop=",= row.key," label="$t('table[,=$index,]')"></el-table-column>
+            
         </el-table>
 
         <el-pagination
@@ -60,7 +66,7 @@
 	        	this.getList();
             },
 
-            search() {
+            () {
 	        	this.pageNum = 1;
 	        	this.getList();
             },

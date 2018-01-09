@@ -11,21 +11,27 @@ let If = require('./components/if');
 let For = require('./components/for');
 
 let methods = {
-	'=': Value,
-
-	'for'(list) {
-		return list.toString();
+	'='(content, json) {
+		return Value(content[0], json);
 	},
 
-	'if'(list) {
-		return list.toString();
+	'for'(content, text, json) {
+		text.splice(0, 1, content.slice(0, -1));
+
+		return For(text, json);
+	},
+
+	'if'(content, text, json) {
+		text.splice(0, 1, content.slice(0, -1));
+
+		return For(text, json);
 	},
 
 	'includes': Includes
 }
 
 module.exports = function (text, json) {
-	let [type, content] = text[0].split(/\s/);
+	let [type, ...content] = text[0].split(/\s/);
 
-	return methods[type](content, json);
+	return methods[type](content, text, json);
 }

@@ -4,8 +4,15 @@
  * Created by fengdi on 2018/1/8.
  * @copyright Copyright &copy; 2006-2017 Tuniu.com
  */
+let value = require('./value');
 
-module.exports = (content, json) => {
+module.exports = (list = [], json) => {
+	let head = list.shift();
+	let array = value(head[2], json) || [];
 
-	return content;
+	array.forEach(item => {
+
+	});
+
+	return list.toString();
 }

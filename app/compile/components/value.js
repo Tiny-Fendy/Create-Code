@@ -8,7 +8,6 @@
 module.exports = (content, json) => {
 	try {
 		let func = new Function(...Object.keys(json), `return ${content}`);
-
 		return func(...Object.values(json));
 	} catch (err) {
 		console.log(`[VALUE error]${err}`);

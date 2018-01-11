@@ -11,7 +11,7 @@ let If = require('./components/if');
 let For = require('./components/for');
 
 let methods = {
-	'='(content, json) {
+	'='(content, text, json) {
 		return Value(content[0], json);
 	},
 
